@@ -92,4 +92,29 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    // Implemented by Venkatesh G
+    @Test
+    public void total_cost_of_passed_items_must_be_sum_of_individual_items() {
+        ArrayList<String> selectedItems = new ArrayList<String> ();
+        selectedItems.add ("Veg Clear Soup");
+        selectedItems.add ("Gulab Jamoon");
+
+        restaurant.addToMenu("Veg Clear Soup",219);
+        restaurant.addToMenu("Gulab Jamoon",100);
+
+        int totalCost = restaurant.getTotalCostOfItems(selectedItems);
+
+        assertEquals (319, totalCost);
+    }
+
+    // Implemented by Venkatesh G
+    @Test
+    public void total_cost_of_must_be_0_if_items_no_passed() {
+        ArrayList<String> selectedItems = new ArrayList<String> ();
+        int totalCost = restaurant.getTotalCostOfItems(selectedItems);
+
+        assertEquals (0, totalCost);
+    }
+
 }
