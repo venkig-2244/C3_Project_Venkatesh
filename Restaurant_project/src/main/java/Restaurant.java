@@ -73,4 +73,26 @@ public class Restaurant {
         return name;
     }
 
+    /*
+        Implemented by Venkatesh G
+        Returns total cost of selected items
+     */
+    public int getTotalCostOfItems(ArrayList<String> selectedItems) {
+
+        int totalCost = 0;
+        try {
+            throw new NoSuchMethodException ("Method yet to be implemented.");
+        }
+        /*
+            Reset total cost to 0 and report an error incase selected item is not found the passed array.
+            This condition must not occur.
+         */
+        catch (Exception e) {
+            System.out.println (e.getMessage ());
+            totalCost = -1;
+        }
+
+
+        return totalCost;
+    }
 }
