@@ -41,7 +41,13 @@ public class RestaurantService {
     // Implemented by Venkatesh G
     public int getTotalCostForOrder(String restaurantName, ArrayList<String> menuItems) {
         int totalOrderCost = 0;
-
+        Restaurant existingRestaurant = findRestaurantByName (restaurantName);
+        if (existingRestaurant == null) {
+            totalOrderCost = -1;
+        }
+        else {
+            totalOrderCost = existingRestaurant.getTotalCostOfItems (menuItems);
+        }
         return totalOrderCost;
     }
 }
