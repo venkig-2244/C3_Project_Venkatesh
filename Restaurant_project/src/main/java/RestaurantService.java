@@ -37,4 +37,11 @@ public class RestaurantService {
     public List<Restaurant> getRestaurants() {
         return restaurants;
     }
+
+    // Implemented by Venkatesh G
+    public int getTotalCostForOrder(String restaurantName, ArrayList<String> menuItems) {
+        int totalOrderCost = 0;
+
+        return totalOrderCost;
+    }
 }
