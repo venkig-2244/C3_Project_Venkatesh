@@ -80,18 +80,22 @@ public class Restaurant {
     public int getTotalCostOfItems(ArrayList<String> selectedItems) {
 
         int totalCost = 0;
-        try {
-            throw new NoSuchMethodException ("Method yet to be implemented.");
-        }
-        /*
-            Reset total cost to 0 and report an error incase selected item is not found the passed array.
-            This condition must not occur.
-         */
-        catch (Exception e) {
-            System.out.println (e.getMessage ());
-            totalCost = -1;
-        }
+        for (String selectedItem : selectedItems) {
+            try {
+                Item item = findItemByName (selectedItem);
+                totalCost += item.getPrice ();
+            }
+            /*
+                Reset total cost to -1 and report an error incase selected item is not found the passed array.
+                This condition must not occur.
+             */
+            catch (Exception e) {
+                System.out.println (e.getMessage ());
+                totalCost = -1;
+                break;
+            }
 
+        }
 
         return totalCost;
     }
