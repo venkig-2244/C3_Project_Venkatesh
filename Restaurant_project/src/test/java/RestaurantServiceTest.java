@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.*;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -25,7 +26,7 @@ class RestaurantServiceTest {
 
     // Implemented by Venkatesh G
     @BeforeEach
-    public void beforeEach() throws restaurantNotFoundException {
+    public void beforeEach() {
 
         restaurant = service.addRestaurant("Amelie's cafe","Chennai",openingTime,closingTime);
         restaurant.addToMenu("Sweet corn soup",119);
@@ -81,4 +82,30 @@ class RestaurantServiceTest {
         assertEquals(initialNumberOfRestaurants + 1,service.getRestaurants().size());
     }
     //<<<<<<<<<<<<<<<<<<<<ADMIN: ADDING & REMOVING RESTAURANTS>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    // Implemented by Venkatesh G
+    @Test
+    public void getting_cost_for_food_items_in_existing_restaurant_should_return_total_cost() {
+        ArrayList<String> selectedItems = new ArrayList<String> ();
+        selectedItems.add ("Sweet corn soup");
+        selectedItems.add ("Vegetable lasagne");
+
+        int totalCost = service.getTotalCostForOrder("Amelie's cafe", selectedItems);
+
+        assertEquals (388, totalCost);
+    }
+
+    // Implemented by Venkatesh G
+    @Test
+    public void getting_cost_for_food_items_in_existing_restaurant_should_return_minus_one() {
+        ArrayList<String> selectedItems = new ArrayList<String> ();
+        selectedItems.add ("Stuffed Parota");
+        selectedItems.add ("Salt Lassi");
+
+        // "Mini Punjabi Dhaba" does not exists in the restaurant list.
+        // Following call is expected to fail.
+        int totalCost = service.getTotalCostForOrder("Mini Punjabi Dhaba", selectedItems);
+
+        assertEquals (-1, totalCost);
+    }
 }
