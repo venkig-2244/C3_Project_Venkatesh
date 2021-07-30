@@ -1,6 +1,5 @@
 package Stacks;
 
-import java.util.Stack;
 import java.util.LinkedList;
 import java.util.EmptyStackException;
 
@@ -14,7 +13,7 @@ public class ParenthesisStack {
     // you could also initialise the stack from the inbuilt class
     // private static Stack<Character> stack = new Stack<Character>();
 
-    private static MyStack<Character> stack = new MyStack<Character>();
+    private static StacksImplementation.MyStack<Character> stack = new StacksImplementation.MyStack<Character> ();
 
 
     public static void main(String[] args) {

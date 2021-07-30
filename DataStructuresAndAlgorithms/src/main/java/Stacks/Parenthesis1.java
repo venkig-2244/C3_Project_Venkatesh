@@ -7,11 +7,12 @@ public class Parenthesis1 {
     */
     public static void main(String[] args) {
         try {
-            System.out.println(match("()"));
-            System.out.println(match("((((((()))))))"));
-            System.out.println(match("(((((()))))))"));
-            System.out.println(match("(((((()))))))"));
-            System.out.println(match("(((()(((()))))))"));
+//            System.out.println(match("()"));
+//            System.out.println(match("((((((()))))))"));
+//            System.out.println(match("(((((()))))))"));
+//            System.out.println(match("(((((()))))))"));
+//            System.out.println(match("(((()(((()))))))"));
+            System.out.println (match("(()((()(()))(()()"));
         } catch (Exception e) {
             // catch the exception thrown by the method match() in try block;
             // e.getMessage() will get the exception message

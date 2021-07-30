@@ -18,20 +18,22 @@ public class Parenthesis3 {
 
   public static void main(String[] args) {
     try {
-      System.out.println(match("()"));
-      System.out.println(match("((((((()))))))"));
-      System.out.println(match("(((((()))))))"));
-      System.out.println(match("(((((()))))))"));
-      System.out.println(match("(((()(((()))))))"));
+//      System.out.println(match("()"));
+//      System.out.println(match("((((((()))))))"));
+//      System.out.println(match("(((((()))))))"));
+//      System.out.println(match("(((((()))))))"));
+//      System.out.println(match("(((()(((()))))))"));
+//
+//      System.out.println(match("{}"));
+//      System.out.println(match("{{{{{{{}}}}}}}"));
+//      System.out.println(match("{{{{{{}}}}}}}"));
+//      System.out.println(match("{{{{{{}}}}}}}"));
+//      System.out.println(match("{{{{}{{{{}}}}}}}"));
+//
+//      System.out.println(match("{{({}{{{{}}}})}}"));
+//      System.out.println(match("{{({}{{{{}}})}}}"));
 
-      System.out.println(match("{}"));
-      System.out.println(match("{{{{{{{}}}}}}}"));
-      System.out.println(match("{{{{{{}}}}}}}"));
-      System.out.println(match("{{{{{{}}}}}}}"));
-      System.out.println(match("{{{{}{{{{}}}}}}}"));
-
-      System.out.println(match("{{({}{{{{}}}})}}"));
-      System.out.println(match("{{({}{{{{}}})}}}"));
+      System.out.println(match("(((){}{(}))"));
     }
     catch(Exception e) {
       System.out.println(e.getMessage());
@@ -70,6 +72,7 @@ public class Parenthesis3 {
      else {
         throw new Exception("Unexpected character " + c);
       }
+     System.out.println (stack.size ());
     }
     if(stack.isEmpty()) {
       return true;
